@@ -1,4 +1,4 @@
-// import React, { useEffect, useState  } from "react";
+import React, { useEffect, useState  } from "react";
 // import Head from "next/head";
 // import Link from "next/link";
 // import mongoose from "mongoose";
@@ -6,43 +6,44 @@
 // import Recommended from "./Recommended";
 // import Image from "next/image";
 
-// const Detail = ({animeD, anime , AllAnimeData}) => {
-//   console.log({'anime': anime})
+const Detail = ({animeD, anime , AllAnimeData}) => {
+  // console.log({'anime': anime})
 
 
-//   const [show, setShow] = useState("-webkit-box");
-//   const [more, setMore] = useState("show more");
-//   const myanime = anime
+  // const [show, setShow] = useState("-webkit-box");
+  // const [more, setMore] = useState("show more");
+  // const myanime = anime
 
-//   const animeData = animeD
-//   const [hydrated, setHydrated] = useState(false);
+  // const animeData = animeD
+  // const [hydrated, setHydrated] = useState(false);
 
-//   useEffect(() => {
-//     setHydrated(true);
-//   }, []);
+  // useEffect(() => {
+  //   setHydrated(true);
+  // }, []);
 
 
-//   if (!hydrated) {
-//     return null;
-//   }
+  // if (!hydrated) {
+  //   return null;
+  // }
 
-//   console.log(animeData);
+  // console.log(animeData);
 
-//   const toggleShow = () => {
-//     if (show == "-webkit-box") {
-//       setShow("block");
-//       setMore("less more")
-//     } else {
-//       setShow("-webkit-box");
-//       setMore("show more")
-//     }
-//   };
+  // const toggleShow = () => {
+  //   if (show == "-webkit-box") {
+  //     setShow("block");
+  //     setMore("less more")
+  //   } else {
+  //     setShow("-webkit-box");
+  //     setMore("show more")
+  //   }
+  // };
 
-//   const studioName = animeData && animeData.studios.edges.length > 0 
-//     ? animeData.studios.edges[0].node.name 
-//     : "Unknown";
+  // const studioName = animeData && animeData.studios.edges.length > 0 
+  //   ? animeData.studios.edges[0].node.name 
+  //   : "Unknown";
 
-//   return (
+  return (
+    <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Trandingpage</h1></div>
 //     <div style={{ overflowX: "hidden" }}>
 //       <Head>
 //         <title>Create Next App</title>
@@ -286,10 +287,10 @@
 //       </div>
 //         <Recommended AllAnimeData={AllAnimeData}/>
 //     </div>
-//   );
-// };
+  );
+};
 
-// export default Detail;
+export default Detail;
 
 // export async function getServerSideProps(context){
 

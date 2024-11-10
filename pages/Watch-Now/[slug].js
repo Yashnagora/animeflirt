@@ -1,30 +1,31 @@
-// import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // import Head from "next/head";
 // import Link from "next/link";
 // import mongoose from "mongoose";
 // import Anime from "../../models/Anime";
 // import Recommended from "../Recommended";
 
-// const Watch = ({ anime, animeD, AllAnimeData}) => {
-//   console.log(anime);
-//   const MyAnimeData = anime;
+const Watch = ({ anime, animeD, AllAnimeData}) => {
+  // console.log(anime);
+  // const MyAnimeData = anime;
 
-//   const [currentEpisode, setCurrentEpisode] = useState(MyAnimeData.episodes[0]);
-//   const [hydrated, setHydrated] = useState(false);
+  // const [currentEpisode, setCurrentEpisode] = useState(MyAnimeData.episodes[0]);
+  // const [hydrated, setHydrated] = useState(false);
 
-//   useEffect(() => {
-//     setHydrated(true); 
-//   }, []);
+  // useEffect(() => {
+  //   setHydrated(true); 
+  // }, []);
 
-//   if (!hydrated) {
-//     return null;
-//   }
+  // if (!hydrated) {
+  //   return null;
+  // }
 
-//   const handleEpisodeClick = (episode) => {
-//     setCurrentEpisode(episode); // Set the clicked episode as the current episode
-//   };
+  // const handleEpisodeClick = (episode) => {
+  //   setCurrentEpisode(episode); // Set the clicked episode as the current episode
+  // };
 
-//   return (
+  return (
+    <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Trandingpage</h1></div>
 //     <>
 //       <Head>
 //         <title>Watch {MyAnimeData.title}</title>
@@ -273,10 +274,10 @@
 //           <Recommended AllAnimeData={AllAnimeData}/>
 //       </div>
 //     </>
-//   );
-// };
+  );
+};
 
-// export default Watch;
+export default Watch;
 
 // export async function getServerSideProps(context) {
 //   // get my anime data

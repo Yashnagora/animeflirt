@@ -1,191 +1,192 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 // import Link from "next/link";
 // import Head from "next/head";
 // import mongoose from "mongoose";
 // import Anime from "../models/Anime";
 
-// const Trending = (TrandingAnimeData) => {
-//   const animeData = TrandingAnimeData;
-//   const sortedAnimeData = animeData.TrandingAnimeData.sort((a, b) => b.averageScore - a.averageScore);
-//   const [hoveredAnimeId, setHoveredAnimeId] = useState(null);
-//   const [display, setdisplay] = useState("none");
+const Trending = (TrandingAnimeData) => {
+  // const animeData = TrandingAnimeData;
+  // const sortedAnimeData = animeData.TrandingAnimeData.sort((a, b) => b.averageScore - a.averageScore);
+  // const [hoveredAnimeId, setHoveredAnimeId] = useState(null);
+  // const [display, setdisplay] = useState("none");
   
 
-//   const handleMouseEnter = (id) => {
-//     setHoveredAnimeId(id);
-//     setdisplay("block")
-//   };
+  // const handleMouseEnter = (id) => {
+  //   setHoveredAnimeId(id);
+  //   setdisplay("block")
+  // };
 
-//   const handleMouseLeave = (id) => {
-//     // Delay added to allow smooth transition between card and details box
-//     setTimeout(() => {
-//       if (hoveredAnimeId === id) {
-//         setHoveredAnimeId(null);
-//         setdisplay("none")
-//       }
-//     }, 200);
-//   };
+  // const handleMouseLeave = (id) => {
+  //   // Delay added to allow smooth transition between card and details box
+  //   setTimeout(() => {
+  //     if (hoveredAnimeId === id) {
+  //       setHoveredAnimeId(null);
+  //       setdisplay("none")
+  //     }
+  //   }, 200);
+  // };
 
-//   return (
-//     <div className="trending second">
-//       <div className="latest">
-//         <div className="box" style={{ justifyContent: "normal" }}>
-//           {animeData.TrandingAnimeData.map((anime) => {
-//             return (
-//               <div key={anime.id} className="main-box">
-//                 <Head>
-//                 <style>{`
-//                   .anime-details-${anime.id}{
-//                       display: none; 
-//                       top: 112.525px;
-//     left: 81px;
-//                       width: 250px;
-//                       border: none;
-//                       background: rgba(78, 78, 82, .6);
-//                       backdrop-filter: blur(10px);
-//                       -webkit-backdrop-filter: blur(10px);
-//                       width: 300px;
-//                       border-radius: 7px;
-//                       box-shadow: 0 20px 20px rgba(0, 0, 0, .05);
-//                       font-size: 12px;
-//                       line-height: 1.3em;
-//                       z-index: 999 !important;
-//                       color: #555;
-//                       position: absolute;
-//                       min-width: 50px;
-//                       direction: ltr;
-//                       padding: 0;
-//                   }
-//                   .trending .latest .box .main-box:hover .anime-details-${anime.id}{
-//                       display: block;
-//                       transition: 0.2s all linear
-//                   }
+  return (
+    <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Trandingpage</h1></div>
+    // <div className="trending second">
+    //   <div className="latest">
+    //     <div className="box" style={{ justifyContent: "normal" }}>
+    //       {animeData.TrandingAnimeData.map((anime) => {
+    //         return (
+    //           <div key={anime.id} className="main-box">
+    //             <Head>
+    //             <style>{`
+    //               .anime-details-${anime.id}{
+    //                   display: none; 
+    //                   top: 112.525px;
+    // left: 81px;
+    //                   width: 250px;
+    //                   border: none;
+    //                   background: rgba(78, 78, 82, .6);
+    //                   backdrop-filter: blur(10px);
+    //                   -webkit-backdrop-filter: blur(10px);
+    //                   width: 300px;
+    //                   border-radius: 7px;
+    //                   box-shadow: 0 20px 20px rgba(0, 0, 0, .05);
+    //                   font-size: 12px;
+    //                   line-height: 1.3em;
+    //                   z-index: 999 !important;
+    //                   color: #555;
+    //                   position: absolute;
+    //                   min-width: 50px;
+    //                   direction: ltr;
+    //                   padding: 0;
+    //               }
+    //               .trending .latest .box .main-box:hover .anime-details-${anime.id}{
+    //                   display: block;
+    //                   transition: 0.2s all linear
+    //               }
 
-//         `}</style>
-//                 </Head>
-//                 <div className={`card card-${anime.id}`}>
-//                   <Link href={`/Detail?id=${anime.id}`} className="anime-box">
-//                     <div>
-//                       <div className="tic">
-//                         <div className="tic-item tic-sub">
-//                           <i className="fas fa-closed-captioning mr-1"></i>
-//                           {anime.episodes}
-//                         </div>
-//                         <div className="tic-item tic-dub">
-//                           <i className="fas fa-microphone mr-1"></i>
-//                           {anime.episodes}
-//                         </div>
-//                         <div className="tic-item tic-eps">{anime.episodes}</div>
-//                       </div>
-//                       <img src={anime.coverImage.extraLarge} />
-//                     </div>
-//                     <i className="fa fa-play"></i>
-//                   </Link>
-//                 </div>
-//                 <div className="video-details">
-//                   <h3 className="video-title">
-//                     <Link href={`/Detail?id=${anime.id}`}>
-//                       {anime.title.english}
-//                     </Link>
-//                   </h3>
-//                   <div className="video-info">
-//                     <span>{anime.format}</span>
-//                     <span className="dot"></span>
-//                     <span>{anime.duration}m</span>
-//                   </div>
-//                 </div>
+    //     `}</style>
+    //             </Head>
+    //             <div className={`card card-${anime.id}`}>
+    //               <Link href={`/Detail?id=${anime.id}`} className="anime-box">
+    //                 <div>
+    //                   <div className="tic">
+    //                     <div className="tic-item tic-sub">
+    //                       <i className="fas fa-closed-captioning mr-1"></i>
+    //                       {anime.episodes}
+    //                     </div>
+    //                     <div className="tic-item tic-dub">
+    //                       <i className="fas fa-microphone mr-1"></i>
+    //                       {anime.episodes}
+    //                     </div>
+    //                     <div className="tic-item tic-eps">{anime.episodes}</div>
+    //                   </div>
+    //                   <img src={anime.coverImage.extraLarge} />
+    //                 </div>
+    //                 <i className="fa fa-play"></i>
+    //               </Link>
+    //             </div>
+    //             <div className="video-details">
+    //               <h3 className="video-title">
+    //                 <Link href={`/Detail?id=${anime.id}`}>
+    //                   {anime.title.english}
+    //                 </Link>
+    //               </h3>
+    //               <div className="video-info">
+    //                 <span>{anime.format}</span>
+    //                 <span className="dot"></span>
+    //                 <span>{anime.duration}m</span>
+    //               </div>
+    //             </div>
                 
-//                   <div
-//                     // id="anime-details"
-//                     className={`anime-details-${anime.id}`}
-//                   >
-//                     <div className="popup">
-//                       <div className="popup-container">
-//                         <div className="popup-title">{anime.title.english}</div>
-//                         <div className="popup-details">
-//                           <span className="popup-rating">
-//                             <i className="fas fa-star text-warning"></i>
-//                             {(anime.averageScore / 10).toFixed(1)}
-//                           </span>
-//                           <span className="video-other">
-//                             <div className="tic popup-tic">
-//                               <div className="tic-item tic-quality">HD</div>
-//                               <div className="tic-item tic-sub">
-//                                 <i className="fas fa-closed-captioning mr-1"></i>
-//                                 {anime.episodes}
-//                               </div>
-//                               <div className="tic-item tic-dub">
-//                                 <i className="fas fa-microphone mr-1"></i>
-//                                 {anime.episodes}
-//                               </div>
-//                               <div className="tic-item tic-eps">
-//                                 {anime.episodes}
-//                               </div>
-//                             </div>
-//                           </span>
-//                           <span className="popup-type">{anime.format}</span>
-//                           <div className="clear"></div>
-//                         </div>
-//                         <div className="popup-desc">
-//                           Asta and Yuno were abandoned at the same church on the
-//                           same day. Raised together as children, they came to
-//                           know of the
-//                         </div>
-//                         <div className="popup-line">
-//                           <span className="stick">Japanese:</span>
-//                           <span className="stick-taxt">{anime.native}</span>
-//                         </div>
-//                         <div className="popup-line">
-//                           <span className="stick">Aired:</span>
-//                           <span className="stick-taxt">
-//                             {anime.startDate.month} {anime.startDate.day},{" "}
-//                             {anime.startDate.year}
-//                           </span>
-//                         </div>
-//                         <div className="popup-line">
-//                           <span className="stick">Status:</span>
-//                           <span className="stick-taxt">{anime.status}</span>
-//                         </div>
-//                         <div className="popup-line">
-//                           <span className="stick">Genres:</span>
-//                           {anime.genres.map((genre) => (
-//                             <a
-//                               href={`/genre/${genre}`}
-//                               key={genre}
-//                               title="Action"
-//                             >
-//                               {genre},
-//                             </a>
-//                           ))}
-//                         </div>
-//                         <div className="popup-button">
-//                           <Link
-//                             href={`/Detail?id=${anime.id}`}
-//                             className="btn-play"
-//                           >
-//                             <i className="fa fa-play mr-2"></i>
-//                             Watch now
-//                           </Link>
-//                           <div className="list-btn">
-//                             <Link href={""} className="list-btn-a">
-//                               <i className="fas fa-plus"></i>
-//                             </Link>
-//                           </div>
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
+    //               <div
+    //                 // id="anime-details"
+    //                 className={`anime-details-${anime.id}`}
+    //               >
+    //                 <div className="popup">
+    //                   <div className="popup-container">
+    //                     <div className="popup-title">{anime.title.english}</div>
+    //                     <div className="popup-details">
+    //                       <span className="popup-rating">
+    //                         <i className="fas fa-star text-warning"></i>
+    //                         {(anime.averageScore / 10).toFixed(1)}
+    //                       </span>
+    //                       <span className="video-other">
+    //                         <div className="tic popup-tic">
+    //                           <div className="tic-item tic-quality">HD</div>
+    //                           <div className="tic-item tic-sub">
+    //                             <i className="fas fa-closed-captioning mr-1"></i>
+    //                             {anime.episodes}
+    //                           </div>
+    //                           <div className="tic-item tic-dub">
+    //                             <i className="fas fa-microphone mr-1"></i>
+    //                             {anime.episodes}
+    //                           </div>
+    //                           <div className="tic-item tic-eps">
+    //                             {anime.episodes}
+    //                           </div>
+    //                         </div>
+    //                       </span>
+    //                       <span className="popup-type">{anime.format}</span>
+    //                       <div className="clear"></div>
+    //                     </div>
+    //                     <div className="popup-desc">
+    //                       Asta and Yuno were abandoned at the same church on the
+    //                       same day. Raised together as children, they came to
+    //                       know of the
+    //                     </div>
+    //                     <div className="popup-line">
+    //                       <span className="stick">Japanese:</span>
+    //                       <span className="stick-taxt">{anime.native}</span>
+    //                     </div>
+    //                     <div className="popup-line">
+    //                       <span className="stick">Aired:</span>
+    //                       <span className="stick-taxt">
+    //                         {anime.startDate.month} {anime.startDate.day},{" "}
+    //                         {anime.startDate.year}
+    //                       </span>
+    //                     </div>
+    //                     <div className="popup-line">
+    //                       <span className="stick">Status:</span>
+    //                       <span className="stick-taxt">{anime.status}</span>
+    //                     </div>
+    //                     <div className="popup-line">
+    //                       <span className="stick">Genres:</span>
+    //                       {anime.genres.map((genre) => (
+    //                         <a
+    //                           href={`/genre/${genre}`}
+    //                           key={genre}
+    //                           title="Action"
+    //                         >
+    //                           {genre},
+    //                         </a>
+    //                       ))}
+    //                     </div>
+    //                     <div className="popup-button">
+    //                       <Link
+    //                         href={`/Detail?id=${anime.id}`}
+    //                         className="btn-play"
+    //                       >
+    //                         <i className="fa fa-play mr-2"></i>
+    //                         Watch now
+    //                       </Link>
+    //                       <div className="list-btn">
+    //                         <Link href={""} className="list-btn-a">
+    //                           <i className="fas fa-plus"></i>
+    //                         </Link>
+    //                       </div>
+    //                     </div>
+    //                   </div>
+    //                 </div>
+    //               </div>
                  
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+    //           </div>
+    //         );
+    //       })}
+    //     </div>
+    //   </div>
+    // </div>
+  );
+};
 
-// export default Trending;
+export default Trending;
 
 
 // export async function getServerSideProps(context) {
