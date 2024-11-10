@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+.details-header {
+  height: 300px;
+  transition: transform 0.5s;
+  position: relative;
+}
+
+.m-main-container {
+  position: relative;
+}
+
+.main-container {
+  z-index: 2;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail-container{
+    box-sizing: content-box;
+ display: flex;
+}
+
+.detail-container-img{
+    margin-left: 140px;
+    margin-top: -40px;
+}
+
+.detail-container-img img{
+    height: 330px;
+    width: 210px;
+}
+
+.data-in-container{
+    padding: 10px;
+    height: 290px;
+    width: calc(100% - 20px);
+    box-sizing: content-box;
+}
+
+.anchor-for-back-page{
+    width: auto;
+}
+
+.anchor-elements-in-ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 0.25rem;
+    
+}
+
+.anchor-to-main{
+    list-style: none;
+}
+
+.anchor-to-main span{
+    font-family: 'Montserrat', Arial;
+}
+
+.anchor-to-main a{
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 20px;
+    display: inline;
+    text-decoration: none;
+}
+
+.anchor-to-main a:hover{
+    color: #faa300;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.active-page-tag span{
+    cursor: default;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Montserrat', Arial;
+}
+
+.active-page-tag::marker{
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+    color: black;
+}
+
+.detail-container h1{
+    font-size: 40px;
+    color: #faa300;
+    font-weight: 700;
+    margin: 10px 0;
+    padding: 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.detail-container strong{
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-data{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 10px;
+    gap: 10px 0;
+    min-height: 30px;
+    align-items: center;
+}
+
+.list-v{
+    display: flex;
+    padding: 0;
+    margin-block: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    list-style: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding-inline-start: 15px;
+}
+
+li.list-els-v{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: rgba(255, 255, 255, 0.5) solid 1px;
+    border-radius: 8px;
+    font-size: 11px;
+    padding: 4px;
+    color: rgba(0, 0, 0, 0.95);
+    list-style: none;
+}
+
+li.list-els-v span{
+    font-family: 'Montserrat', Arial;
+}
+
+li.list-els-v:nth-child(5n + 1){
+    background-color: #ffdd95;
+}
+li.list-els-v:nth-child(5n + 2){
+    background-color: #fc887b;
+}
+li.list-els-v:nth-child(5n + 3){
+    background-color: #ccabda;
+}
+
+.video-data{
+    margin-top: 0 !important;
+    width: auto;
+    padding-left: 10px;
+}
+
+.list-v-t{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    list-style: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding-inline-start: 15px;
+    padding: 0;
+    margin-block: 0;
+}
+
+.list-els-v-t-1 span{
+    font-family: 'Montserrat', Arial;
+}
+
+.list-els-v-t-1{
+    list-style: none;
+    margin-right: 20px;
+    padding: 2px 0;
+    font-family: 'Montserrat', Arial;
+}
+.list-els-v-t-2{
+    list-style: disc;
+    margin-right: 20px;
+    padding: 2px 0;
+    font-family: 'Montserrat', Arial;
+}
+
+.btn-data{
+    margin: 5px 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-data a{
+    text-decoration: none;
+}
+
+.button-watch-now{
+    height: 35px;
+    border-radius: 20px;
+    padding: 0 20px;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #faa300;
+    font-family: 'Montserrat', Arial;
+    margin: 0em;
+    border-width: 0;
+    border-image: none;
+    font-family: 'Montserrat', Arial;
+}
+
+.button-watch-now:focus, .btn-watch-list {
+    animation: smallWibble 0.2s ease;
+}
+
+.button-watch-now:focus:before {
+    background-color: #faa300;
+    opacity: 0.5;
+}
+
+.button-watch-now:before, .button-read-manga:before{
+    content: "";
+    transition: all 0.5s;
+    z-index: -1;
+    position: absolute;
+    height: 120%;
+    width: 105%;
+    border-radius: 20px;
+    left: calc(-2.5% - 1px);
+    top: -10%;
+}
+
+.button-watch-now span{
+    font-family: 'Montserrat', Arial;
+}
+
+.button-watch-now:hover{
+    cursor: pointer;
+}
+
+.button-watch-now i{
+    font-size: 16px;
+}
+
+.btn-watch-list:hover{
+    cursor: pointer;
+}
+
+.btn-watch-list{
+    height: 35px;
+    border-radius: 20px;
+    padding: 0 20px;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #43a047;
+    margin: 0em;
+    border-width: 0;
+    border-image: none;
+    font-family: 'Montserrat', Arial;
+}
+
+.button-read-manga:focus:before {
+    background-color: #43a047;
+    opacity: 0.5;
+}
+
+.time-index{
+    margin-left: 10px;
+    margin-top: 15px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.t-txt{
+    font-size: 12px;
+}
+
+.time-index span{
+    font-family: 'Montserrat', Arial;
+    margin-left: 5px;
+}
+
+.more-anime-info{
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 2%;
+    display: flex;
+    font-family: 'Montserrat', Arial;
+}
+
+.anime-desc-more{
+    width: 68%;
+    font-size: 14px;
+    padding: 0 1%;
+}
+
+.desc-text{
+    display: block;
+    border-left: 3px solid #faa300;
+    padding-left: 10px;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.anime-desc-more-text p{
+    overflow: hidden;
+    font-family: 'Montserrat', Arial;
+    border-left: 3px solid #faa300;
+    padding-left: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+
+.show-more-btn{
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    float: right;
+    margin-top: -5px;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.anime-characters-txt{
+    color: #faa300;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+.anime-all-characters{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.anime-char{
+    height: 90px;
+    width: 25%;
+    display: flex;
+    flex-grow: 1;
+}
+
+.anime-char-img{
+    height: 80%;
+}
+
+.anime-char-data{
+    padding: 10px;
+}
+
+.anime-char-data h4{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 100%;
+    font-family: 'Montserrat', Arial;
+}
+
+.anime-char-data span{
+    margin-bottom: 0;
+    font-size: 90%;
+    font-family: 'Montserrat', Arial;
+}
+
+.anime-desc-two{
+    box-sizing: content-box;
+    width: 25%;
+    margin-left: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 10px;
+    font-size: 13px;
+    line-height: 0.7cm;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.anime-desc-two p{
+    font-size: 14px;
+}
+
+.anime-desc-two span{
+    font-family: 'Montserrat', Arial;
+}
+
+.anime-desc-two strong{
+    font-family: 'Montserrat', Arial;
+}
+
+.anime-desc-two hr{
+    border-color: rgba(255, 255, 255, 0.5);
+    border-width: 0.5px;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+.anime-genres{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.round-updated{
+    border: 1px rgba(255, 255, 255, 0.5) solid;
+    border-radius: 10px;
+    padding: 3px 7px;
+    line-height: 0.5cm;
+}
+
+.round-updated a{
+    all: unset;
+    text-decoration: none;
+}
+
+.more-season-anime-container{
+    padding-block: 20px;
+    width: 96%;
+    margin-inline: auto;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.more-anime-txt{
+    display: block;
+    font-weight: 100;
+    color: #faa300;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.anime-more-season-data{
+    margin-top: 20px;
+    padding: 10px 0px;
+    display: grid;
+    gap: 10px 20px;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.anime-season-item{
+    width: 100%;
+    border-radius: 20px;
+    border: 1px rgba(255, 255, 255, 0.6) dashed;
+    transition: color 0.5s;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+.anime-season-item:hover{
+    cursor: pointer;
+    color: #faa300;
+    border: 1px solid #faa300;
+}
+
+.anime-season-item h2{
+    font-size: 16px;
+    padding-inline: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.anime-trailer{
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trailer-vid{
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+/* responsive  */
+
+@media only screen and (max-width: 1150px) {
+    h1 {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .anime-more-season-data{
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .detail-container-img{
+        margin-left: 100px;
+        margin-top: -40px;
+    }
+
+    .detail-container-img img{
+        width: 190px;
+        height: 290px;
+    }
+    .data-in-container{
+        height: 250px;
+    }
+    .anchor-for-back-page{
+        font-size: 12px;
+    }
+    .detail-container h1{
+        font-size: 30px;
+    }
+    .list-els-v{
+        font-size: 11px;
+    }
+    .list-v-t {
+        font-size: 12px;
+    }
+    .button-watch-now, .btn-watch-list {
+        height: 30px;
+        font-size: 14px;    
+    }
+    .time-index {
+        font-size: 12px;
+    }
+    .t-txt {
+        font-size: 11px;
+    }
+    .desc-text{
+        font-size: 13px;
+    }
+    .anime-desc-two {
+        font-size: 12px;
+    }
+    .anime-more-season-data {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .detail-container-img{
+        margin-left: 80px;
+    }
+    .detail-container h1{
+        font-size: 28px;
+    }
+    .text-data{
+        margin-block: 0;
+        max-width: calc(100% - 20px);
+    }
+    .list-els-v{
+        font-size: 10px;
+    }
+    .video-data{
+        margin-top: 2px;
+    }
+    .list-v-t {
+        font-size: 11px;
+        padding-inline-start: 10px;
+    }
+    .time-index {
+        font-size: 10px;
+    }
+    .anime-desc-two {
+        font-size: 11px;
+    }
+
+
+}
+
+@media only screen and (max-width: 850px){
+    .detail-container h1{
+        font-size: 25px;
+    }
+    .desc-text{
+        font-size: 12px;
+    }
+    .anime-desc-two {
+        font-size: 11px;
+    }
+    .anime-more-season-data{
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+    .anime-season-item{
+        height: 80px;
+    }
+    .anime-season-item h2{
+        font-size: 13px;
+    }
+}
+
+
+@media only screen and (max-width: 750px) {
+    .detail-container-img img {
+        height: 270px;
+        width: 160px;
+    }
+    .data-in-container{
+        height: auto;
+    }
+    .detail-container h1{
+        font-size: 23px;
+    }
+    .list-els-v{
+        font-size: 9px;
+    }
+    .list-v-t{
+        font-size: 10px;
+        padding-inline-start: 10px;
+    }
+    .time-index {
+        font-size: 9px;
+    }
+    .desc-text{
+        font-size: 11px;
+    }
+    .show-more-btn {
+        font-size: 12px;
+    }
+    .anime-desc-two p {
+        font-size: 13px;
+        margin-left: -10px;
+    }
+    .anime-desc-two span {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .detail-container-img{
+        margin-left: 30px;
+    }
+    .video-data{
+        margin-top: 3px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .anime-more-season-data {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .anime-more-season-data {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .m-main-container::before {
+        background-size: 100% 100%;
+    }
+}
+
+
+@media only screen and (max-width: 660px) {
+    .details-header{
+        height: 250px;
+    }
+    .main-container{
+        padding-bottom: 10px;
+    }
+    .detail-container{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .detail-container-img{
+        width: 100%;
+        margin: 0;
+        margin-top: -40px;
+    }
+    .detail-container-img img{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .anchor-for-back-page{
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+    }
+    .anchor-elements-in-ul{
+        justify-content: center;
+        margin-left: 0;
+    }
+    .text-data{
+        width: auto;
+        justify-content: center;
+        margin: auto;
+    }
+    .btn-data {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .button-watch-now, .btn-watch-list {
+        height: 32px;
+    }
+    .t-txt {
+        font-size: 10px;
+    }
+    .more-anime-info {
+        padding-left: 0;
+        display: block;
+    }
+    .anime-desc-more, .anime-desc-two {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .anime-char {
+        height: 90px;
+        width: 33%;
+        display: flex;
+        flex-grow: 1;
+    }
+    .more-anime-txt {
+        margin-left: 10px;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    .anime-more-season-data {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .list-v {
+        margin-bottom: 2px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    h1 {
+        -webkit-line-clamp: 3;
+    }
+    .anime-char {
+        height: 90px;
+        width: 33%;
+        display: flex;
+        flex-grow: 1;
+        font-size: 10px;
+    }
+}
