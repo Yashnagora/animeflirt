@@ -3,5 +3,10 @@
       "env": {
         "CHROME_EXECUTABLE_PATH": "/path/to/chromium" 
       }
+    },
+    "functions": {
+    "api/scrapeEpisodes.js": {
+      "maxDuration": 60
     }
+  }
   }
