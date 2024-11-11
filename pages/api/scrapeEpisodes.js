@@ -182,7 +182,9 @@ async function handleNavigationSteps(page) {
   if (await page.$('button#skip-ad-btn-2')) {
     console.log("Clicking 'Skip Ad and Enjoy' button...");
     await page.click('button#skip-ad-btn-2');
+    console.log("Clicked 'Skip Ad and Enjoy' button...");
     await page.waitForNavigation({ waitUntil: 'networkidle2' });
+    console.log("waitForNavigation");
    }
 
    console.log("Wait for next page");
