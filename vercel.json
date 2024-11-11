@@ -1,12 +1,12 @@
 {
     "build": {
       "env": {
-        "CHROME_EXECUTABLE_PATH": "/path/to/chromium" 
+        "CHROME_EXECUTABLE_PATH": "/path/to/chromium"
       }
     },
     "functions": {
-    "api/scrapeEpisodes.js": {
+     "pages/api/scrapeEpisodes.js": {
       "maxDuration": 60
     }
-  }
+    }
   }
