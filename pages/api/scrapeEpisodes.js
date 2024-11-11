@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     const browser = await puppeteer.launch({
       headless: chromium.headless,
       args: isLocal ? puppeteer.defaultArgs() : chromium.args,
-      executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath('https://<Bucket Name>.s3.amazonaws.com/chromium-v126.0.0-pack.tar'),
+      executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath(),
     });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(80000);
