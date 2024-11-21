@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-core';
 import chromium from '@sparticuz/chromium';
 
-chromium.setHeadlessMode = true;
+chromium.setHeadlessMode = false;
 chromium.setGraphicsMode = false;
 
 export default async function handler(req, res) {
