@@ -1,7 +1,5 @@
 import puppeteer from 'puppeteer-core';
 import chromium from '@sparticuz/chromium';
-const fs = require('fs');
-const path = require('path');
 
 chromium.setHeadlessMode = true;
 chromium.setGraphicsMode = false;
@@ -60,19 +58,6 @@ export default async function handler(req, res) {
     // Step 3: Navigate to the user-provided URL
     console.log("Navigating to user-provided URL:", url);
     await page.goto(url, { waitUntil: 'networkidle2' });
-
-    const takeScreenshot = async (stepName) => {
-      const screenshotDir = path.join(__dirname, '../../../screenshots'); // Create screenshots folder
-
-if (!fs.existsSync(screenshotDir)) {
-    fs.mkdirSync(screenshotDir); // Create directory if not exists
-}
-const screenshotPath = path.join(screenshotDir, `${stepName}.png`);
-await page.screenshot({ path: screenshotPath });
-console.log(`Screenshot saved: ${screenshotPath}`);
-  };
-
-  await takeScreenshot("user_provided_URL"); 
 
     // Step 4: Scrape episode details
     console.log("Scraping episode details...");
@@ -186,24 +171,6 @@ async function selectNextServer(page) {
     console.log("hindi server button not found. Cannot switch server.");
   }
 }
-
-// async function selectServer(page, server) {
-//   try {
-//     await page.waitForSelector(`div.button-a-b-cc.server-btn-a[lan="${server}"][ismul="false"]`, { timeout: 5000 }); // Wait up to 10 seconds
-//     const ServerButton = await page.$(`div.button-a-b-cc.server-btn-a[lan="${server}"][ismul="false"]`);
-//     if (ServerButton) {
-//       console.log("Waiting 3 seconds for 'server' button...");
-//       await new Promise(resolve => setTimeout(resolve, 3000));
-//       await ServerButton.click(`div.button-a-b-cc.server-btn-a[lan="${server}"][ismul="false"]`);
-//       console.log("server selected successfully.");
-//     } else {
-//       console.log("server button not found. Cannot switch server.");
-//     }
-//   } catch (error) {
-//     console.error("Error selecting server:", error);
-//   }
-// }
-
 
 // Navigation function to skip ads
 async function handleNavigationSteps(page) {
@@ -460,23 +427,10 @@ if (!navigationHappened) {
     throw new Error("Failed to navigate after maximum retries.");
 }
 
-console.log("Step completed successfully.");
+console.log("Step 3 completed successfully.");
 
 }
 // await page.waitForNavigation({ waitUntil: 'networkidle2' });
 console.log("Navigation Steps completed successfully.");
-
-const takeScreenshot = async (stepName) => {
-  const screenshotDir = path.join(__dirname, '../../../screenshots'); // Create screenshots folder
-
-if (!fs.existsSync(screenshotDir)) {
-fs.mkdirSync(screenshotDir); // Create directory if not exists
-}
-const screenshotPath = path.join(screenshotDir, `${stepName}.png`);
-await page.screenshot({ path: screenshotPath });
-console.log(`Screenshot saved: ${screenshotPath}`);
-};
-
-await takeScreenshot("Navigation"); 
 
 }
