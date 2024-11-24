@@ -15,8 +15,16 @@ export default async function handler(req, res) {
 
     const browser = await puppeteer.launch({
       // headless: chromium.headless,
-      headless: false,
-      args: isLocal ? puppeteer.defaultArgs() : chromium.args,
+      headless: true,
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-zygote',
+    '--single-process',
+    '--disable-gpu',
+  ],
       executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath(),
     });
     const page = await browser.newPage();
@@ -452,6 +460,7 @@ console.log("Step 3 completed successfully.");
 
 }
 // await page.waitForNavigation({ waitUntil: 'networkidle2' });
+await page.screenshot({ path: `/tmp/step1.png`, fullPage: true });
 console.log("Navigation Steps completed successfully.");
 
 }
