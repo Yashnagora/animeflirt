@@ -215,8 +215,11 @@ async function handleNavigationSteps(page) {
 }
    
   // Step 1: Click 'Click here to continue'
-  if (await page.$('p.center-items')) {
-    console.log("Waiting 10 seconds and simulating user activity...");
+
+  try {
+
+    console.log("start step 1");
+    await page.waitForSelector('p.center-items', { timeout: 30000 });
 
     // Simulate user activity
     await page.mouse.move(100, 100);
@@ -265,12 +268,18 @@ if (buttons.length > 1) {
 }
 await page.waitForNavigation({ waitUntil: 'networkidle2' });
     console.log("Step 1 completed successfully.");
+
+} catch (error) {
+  console.log("Step 1 not completed:", error.message);
 }
 
 
   // Step 2: Wait 15 seconds and click 'Continue' button
-  if (await page.$('p.center-items')) {
-    console.log("Waiting 10 seconds and simulating user activity...");
+
+  try {
+
+    console.log("start step 2");
+    await page.waitForSelector('p.center-items', { timeout: 30000 });
 
     // Simulate user activity
     await page.mouse.move(100, 100);
@@ -361,12 +370,17 @@ await page.waitForNavigation({ waitUntil: 'networkidle2' });
         console.log(`Navigation did not occur after ${maxRetries} retries.`);
         throw new Error("Failed to navigate after maximum retries.");
     }
+
+} catch (error) {
+  console.log("Step 2 not completed:", error.message);
 }
 
 
   // Step 3: Wait another 15 seconds for next 'Continue' button
-  if (await page.$('p.center-items')) {
-    console.log("Waiting 10 seconds and simulating user activity...");
+  try {
+  
+    console.log("start step 3");
+    await page.waitForSelector('p.center-items', { timeout: 30000 });
 
     // Simulate user activity
     await page.mouse.move(100, 100);
@@ -458,9 +472,10 @@ if (!navigationHappened) {
 
 console.log("Step 3 completed successfully.");
 
+} catch (error) {
+  console.log("Step 3 not completed:", error.message);
 }
 // await page.waitForNavigation({ waitUntil: 'networkidle2' });
-await page.screenshot({ path: `/tmp/step1.png`, fullPage: true });
 console.log("Navigation Steps completed successfully.");
 
 }
