@@ -177,13 +177,34 @@ async function handleNavigationSteps(page) {
 
   await new Promise(resolve => setTimeout(resolve, 3000)); 
 
-  if (await page.$('div#dismiss-button')) {
-    console.log("Waiting 2 seconds for ads");
-    await new Promise(resolve => setTimeout(resolve, 2000)); 
-    await page.click('div#dismiss-button');
-    await page.waitForNavigation({ waitUntil: 'networkidle2' });
-    console.log("skip ads completed successfully.");
-  }
+
+  // Check if the ad close button exists and click it
+  try {
+    // Step 1: Wait for the iframe to load
+    console.log("Waiting for the ad iframe...");
+    await page.waitForSelector('iframe#aswift_1', { timeout: 30000 }); // Wait for the iframe
+    console.log("Ad iframe detected.");
+
+    // Step 2: Access the iframe
+    const adIframe = await page.$('iframe#aswift_1'); // Select the iframe
+    const frame = await adIframe.contentFrame(); // Access the iframe's content frame
+    if (!frame) throw new Error("Unable to access iframe content.");
+
+    // Step 3: Wait for the close button inside the iframe
+    console.log("Waiting for the close button inside the iframe...");
+    await frame.waitForSelector('div#dismiss-button', { timeout: 30000 }); // Wait for the close button inside iframe
+    console.log("Close button detected inside the iframe. Clicking...");
+
+    // Step 4: Click the close button
+    await frame.evaluate(() => {
+        const closeButton = document.querySelector('div#dismiss-button');
+        if (closeButton) closeButton.click();
+    });
+    await new Promise(resolve => setTimeout(resolve, 3000));// Wait for ad to fully close
+    console.log("Ad closed successfully.");
+} catch (error) {
+    console.log("Error while handling ad iframe or close button:", error.message);
+}
    
   // Step 1: Click 'Click here to continue'
   if (await page.$('p.center-items')) {
