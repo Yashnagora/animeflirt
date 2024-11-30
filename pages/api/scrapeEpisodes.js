@@ -190,7 +190,7 @@ async function handleNavigationSteps(page) {
   try {
     // Step 1: Wait for the iframe to load
     console.log("Waiting for the ad iframe...");
-    await page.waitForSelector('iframe#aswift_1', { timeout: 5000 }); // Wait for the iframe
+    await page.waitForSelector('iframe#aswift_1', { timeout: 10000 }); // Wait for the iframe
     console.log("Ad iframe detected.");
 
     // Step 2: Access the iframe
@@ -200,7 +200,7 @@ async function handleNavigationSteps(page) {
 
     // Step 3: Wait for the close button inside the iframe
     console.log("Waiting for the close button inside the iframe...");
-    await frame.waitForSelector('div#dismiss-button', { timeout: 5000 }); // Wait for the close button inside iframe
+    await frame.waitForSelector('div#dismiss-button', { timeout: 10000 }); // Wait for the close button inside iframe
     console.log("Close button detected inside the iframe. Clicking...");
 
     // Step 4: Click the close button
@@ -219,7 +219,7 @@ async function handleNavigationSteps(page) {
   try {
 
     console.log("start step 1");
-    await page.waitForSelector('p.center-items', { timeout: 5000 });
+    await page.waitForSelector('p.center-items', { timeout: 8000 });
 
     // Simulate user activity
     await page.mouse.move(100, 100);
@@ -279,7 +279,7 @@ await page.waitForNavigation({ waitUntil: 'networkidle2' });
   try {
 
     console.log("start step 2");
-    await page.waitForSelector('p.center-items', { timeout: 5000 });
+    await page.waitForSelector('p.center-items', { timeout: 8000 });
 
     // Simulate user activity
     await page.mouse.move(100, 100);
@@ -380,7 +380,7 @@ await page.waitForNavigation({ waitUntil: 'networkidle2' });
   try {
   
     console.log("start step 3");
-    await page.waitForSelector('p.center-items', { timeout: 30000 });
+    await page.waitForSelector('p.center-items', { timeout: 8000 });
 
     // Simulate user activity
     await page.mouse.move(100, 100);
