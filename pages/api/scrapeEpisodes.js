@@ -217,8 +217,8 @@ async function handleNavigationSteps(page) {
 //   // Step 1: Click 'Click here to continue'
 
   try {
-
     console.log("start step 1");
+    console.log('Current URL:', page.url());
     await page.waitForSelector('p.center-items', { timeout: 30000 });
     console.log("p.center-items");
     // Simulate user activity
