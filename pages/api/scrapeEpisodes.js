@@ -190,7 +190,7 @@ async function handleNavigationSteps(page) {
   try {
     // Step 1: Wait for the iframe to load
     console.log("Waiting for the ad iframe...");
-    await page.waitForSelector('iframe#aswift_1', { timeout: 10000 }); // Wait for the iframe
+    await page.waitForSelector('iframe#aswift_1', { timeout: 15000 }); // Wait for the iframe
     console.log("Ad iframe detected.");
 
     // Step 2: Access the iframe
