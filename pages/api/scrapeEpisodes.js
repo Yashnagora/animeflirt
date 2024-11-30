@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
     const browser = await puppeteer.launch({
       // headless: chromium.headless,
-      headless: true,
+      headless: false,
   args: [
     '--no-sandbox',
     '--disable-setuid-sandbox',
