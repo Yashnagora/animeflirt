@@ -190,7 +190,7 @@ async function handleNavigationSteps(page) {
   try {
     // Step 1: Wait for the iframe to load
     console.log("Waiting for the ad iframe...");
-    await page.waitForSelector('iframe#aswift_1', { timeout: 15000 }); // Wait for the iframe
+    await page.waitForSelector('iframe#aswift_1', { timeout: 20000 }); // Wait for the iframe
     console.log("Ad iframe detected.");
 
     // Step 2: Access the iframe
@@ -220,7 +220,7 @@ async function handleNavigationSteps(page) {
 
     console.log("start step 1");
     await page.waitForSelector('p.center-items', { timeout: 30000 });
-
+    console.log("p.center-items");
     // Simulate user activity
     await page.mouse.move(100, 100);
     await page.mouse.move(200, 200);
