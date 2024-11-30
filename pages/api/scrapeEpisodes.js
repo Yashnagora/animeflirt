@@ -35,6 +35,10 @@ export default async function handler(req, res) {
       'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/14E5239e Safari/602.1'
     );
 
+    await page.evaluateOnNewDocument(() => {
+      Object.defineProperty(navigator, 'webdriver', { get: () => false });
+  });
+
     // Step 1: Navigate to animedb.in and click "Skip Ads"
     console.log("Navigating to animedb.in...");
     await page.goto('https://animedb.in/', { waitUntil: 'networkidle2' });
