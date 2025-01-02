@@ -80,11 +80,9 @@ const Detail = ({animeD, anime , AllAnimeData}) => {
 //         <div className="main-container">
 //           <div className="detail-container">
 //             <div className="detail-container-img">
-//             <Image
+//             <img
 //   src={animeData.coverImage.extraLarge}
-//   alt="anime"
-//   width={300} // Set the appropriate width for your layout
-//   height={450} // Set the appropriate height for your layout
+//   alt={animeData.title.english}
 // />
 //             </div>
 //             <div className="data-in-container">
@@ -168,11 +166,9 @@ const Detail = ({animeD, anime , AllAnimeData}) => {
 
 //               {animeData.characters.edges.map(({ node, role }) => (
 //                   <div key={node.id} className="anime-char">
-//                    <Image
+//                    <img
 //   src={node.image.large}
 //   alt={node.name.full}
-//   width={100}
-//   height={150}
 // />
 //                     <div className="anime-char-data">
 //                       <h4>{node.name.full}</h4>

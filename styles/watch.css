@@ -114,6 +114,7 @@ iframe.video-player {
     padding-right: 5px;
     scroll-behavior: smooth;
     box-sizing: content-box;
+    overflow: auto;
 }
 
 .episode-short{
@@ -177,12 +178,12 @@ iframe.video-player {
 }
 
 .active-episode{
-    background-color: #faa300;
+    background-color: #ff2c1f;
     opacity: 0.8;
 }
 
 .active-episode-2{
-    background-color: #faa300;
+    background-color: #ff2c1f;
 }
 
 .episode-detail{
@@ -342,7 +343,7 @@ iframe.video-player {
     z-index: 10;
 }
 .anime-more-info li{
-    color: #1ce786;
+    color: #ff2c1f;
     padding: 15px 0px;
     margin-left: 36px;
 }

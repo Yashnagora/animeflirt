@@ -1,4 +1,4 @@
-// import React, {useState} from 'react'
+import React, {useState} from 'react'
 // import Link from 'next/link';
 // import Head from 'next/head';
 
@@ -6,24 +6,7 @@ const Recommended = (AllAnimeData) => {
     // console.log({AllAnimeData})
     // const animeData = AllAnimeData;
     // const sortedAnimeData = animeData.AllAnimeData.sort((a, b) => b.averageScore - a.averageScore);
-    // const [hoveredAnimeId, setHoveredAnimeId] = useState(null);
-    // const [display, setdisplay] = useState("none");
     
-  
-    // const handleMouseEnter = (id) => {
-    //   setHoveredAnimeId(id);
-    //   setdisplay("block")
-    // };
-  
-    // const handleMouseLeave = (id) => {
-    //   // Delay added to allow smooth transition between card and details box
-    //   setTimeout(() => {
-    //     if (hoveredAnimeId === id) {
-    //       setHoveredAnimeId(null);
-    //       setdisplay("none")
-    //     }
-    //   }, 200);
-    // };
   
     return (
         <>      
@@ -192,92 +175,92 @@ const Recommended = (AllAnimeData) => {
 
 export default Recommended
 
-// // export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
 
-// //      // get my anime data
-// //   if (!mongoose.connections[0].readyState) {
-// //     await mongoose.connect(process.env.MONGO_URI)
-// //    }
+//      // get my anime data
+//   if (!mongoose.connections[0].readyState) {
+//     await mongoose.connect(process.env.MONGO_URI)
+//    }
    
-// //    let MyAnime = await Anime.find({});
+//    let MyAnime = await Anime.find({});
 
-// //     const ids = [113415, 136430, 166240, 153288, 151807, 1535, 131573, 110277];
-// //     const API_URL = "https://graphql.anilist.co/";
+//     const ids = [113415, 136430, 166240, 153288, 151807, 1535, 131573, 110277];
+//     const API_URL = "https://graphql.anilist.co/";
   
-// //     // Function to fetch data for a single ID
-// //     const fetchAnimeData = async (id) => {
-// //       const fetchOptions = {
-// //         method: "POST",
-// //         headers: {
-// //           "Content-Type": "application/json",
-// //           Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`, // Replace with actual access token
-// //         },
-// //         body: JSON.stringify({
-// //           query: `
-// //                     query ($id: Int, $type: MediaType) {
-// //                       Media(id: $id, type: $type) {
-// //                         id
-// //                         title {
-// //                           romaji
-// //                           english
-// //                           native
-// //                         }
-// //                         description
-// //                         episodes
-// //                         format
-// //                         seasonYear
-// //                         averageScore
-// //                         duration
-// //                         genres
-// //                         status
-// //                          startDate {
-// //                             year
-// //                             month
-// //                             day
-// //                           }
-// //                           endDate {
-// //                             year
-// //                             month
-// //                             day
-// //                           }
-// //                         coverImage {
-// //                               extraLarge
-// //                               large
-// //                               medium
-// //                               color
-// //                           }
-// //                       }
-// //                     }
-// //                   `,
-// //           variables: {
-// //             id: id,
-// //             type: "ANIME",
-// //           },
-// //         }),
-// //       };
+//     // Function to fetch data for a single ID
+//     const fetchAnimeData = async (id) => {
+//       const fetchOptions = {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`, // Replace with actual access token
+//         },
+//         body: JSON.stringify({
+//           query: `
+//                     query ($id: Int, $type: MediaType) {
+//                       Media(id: $id, type: $type) {
+//                         id
+//                         title {
+//                           romaji
+//                           english
+//                           native
+//                         }
+//                         description
+//                         episodes
+//                         format
+//                         seasonYear
+//                         averageScore
+//                         duration
+//                         genres
+//                         status
+//                          startDate {
+//                             year
+//                             month
+//                             day
+//                           }
+//                           endDate {
+//                             year
+//                             month
+//                             day
+//                           }
+//                         coverImage {
+//                               extraLarge
+//                               large
+//                               medium
+//                               color
+//                           }
+//                       }
+//                     }
+//                   `,
+//           variables: {
+//             id: id,
+//             type: "ANIME",
+//           },
+//         }),
+//       };
   
-// //       try {
-// //         const response = await fetch(API_URL, fetchOptions);
-// //         const data = await response.json();
-// //         if (!response.ok) {
-// //           throw new Error(`Error fetching data for ID ${id}: ${data.message}`);
-// //         }
-// //         return data.data.Media;
-// //       } catch (error) {
-// //         console.error(error);
-// //         return null; // Returning null in case of error
-// //       }
-// //     };
-// //     // Create an array of promises
-// //     const fetchPromises = MyAnime.map((id) => fetchAnimeData(id.id));
+//       try {
+//         const response = await fetch(API_URL, fetchOptions);
+//         const data = await response.json();
+//         if (!response.ok) {
+//           throw new Error(`Error fetching data for ID ${id}: ${data.message}`);
+//         }
+//         return data.data.Media;
+//       } catch (error) {
+//         console.error(error);
+//         return null; // Returning null in case of error
+//       }
+//     };
+//     // Create an array of promises
+//     const fetchPromises = MyAnime.map((id) => fetchAnimeData(id.id));
   
-// //     // Wait for all promises to resolve
-// //     const results = await Promise.all(fetchPromises);
+//     // Wait for all promises to resolve
+//     const results = await Promise.all(fetchPromises);
   
-// //     // Filter out any null results in case of errors
-// //     const validResults = results.filter((result) => result !== null);
+//     // Filter out any null results in case of errors
+//     const validResults = results.filter((result) => result !== null);
   
-// //     return {
-// //       props: { AllAnimeData: validResults },
-// //     };
-// //   }
+//     return {
+//       props: { AllAnimeData: validResults },
+//     };
+//   }

@@ -26,10 +26,7 @@ export default function Home({AllAnimeData, MyAnime}) {
 
 
   return (
-
-    <div>
-      <h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime homepage</h1>
-    </div>
+    <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Home</h1></div>
     // <div>
     //   {/* <!-- Home  --> */}
 

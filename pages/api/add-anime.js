@@ -16,8 +16,19 @@ const handler = async (req, res) => {
         let existingAnime = await Anime.findOne({ id });
 
         if (existingAnime) {
-          // If anime exists, update episodes array
-          existingAnime.episodes = [...existingAnime.episodes, ...episodes];
+          // If anime exists, merge or add episodes under each server type
+          for (const [serverType, serverEpisodes] of Object.entries(episodes)) {
+            if (existingAnime.episodes.has(serverType)) {
+              // Merge episodes if serverType exists
+              existingAnime.episodes.set(
+                serverType,
+                existingAnime.episodes.get(serverType).concat(serverEpisodes)
+              );
+            } else {
+              // Add new serverType
+              existingAnime.episodes.set(serverType, serverEpisodes);
+            }
+          }
           await existingAnime.save();
         } else {
           // Otherwise, create a new anime entry

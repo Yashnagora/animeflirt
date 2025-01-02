@@ -3,6 +3,7 @@ import '../styles/detail.css'
 import '../styles/watch.css'
 import '../styles/style.css'
 import '../styles/test.css'
+import '../styles/trending.css'
 import Navbar from '../components/Navbar'
 
 function MyApp({ Component, pageProps }) {

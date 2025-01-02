@@ -1,8 +1,8 @@
-import puppeteer from 'puppeteer-core';
-import chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer';
+// import chromium from '@sparticuz/chromium';
 
-chromium.setHeadlessMode = true;
-chromium.setGraphicsMode = false;
+// chromium.setHeadlessMode = true;
+// chromium.setGraphicsMode = false;
 
 export default async function handler(req, res) {
   const { id, url, server } = req.body;
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
     const browser = await puppeteer.launch({
       // headless: chromium.headless,
-      headless: false,
+      headless: true,
   args: [
     '--no-sandbox',
     '--disable-setuid-sandbox',
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     '--single-process',
     '--disable-gpu',
   ],
-      executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath(),
+      // executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath(),
     });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(40000);
@@ -146,16 +146,16 @@ async function scrapeEpisodes(page, server) {
 
         // Try to get the iframe src again
         iframeSrc = await getEpisodeIframeSrc(page);
-        serverType = `hin`;
+        serverType = `Hindi`;
       }
 
       // Add the episode details
-      episodes.push({
+      episodes.push(
+        serverType [{
         EpisodeTitle,
         episodeNumber,
         iframeSrc,
-        serverType,
-      });
+      }]);
     }
   }
 
@@ -188,35 +188,6 @@ async function selectNextServer(page) {
 async function handleNavigationSteps(page) {
 
   await new Promise(resolve => setTimeout(resolve, 3000)); 
-
-
-  // Check if the ad close button exists and click it
-//   try {
-//     // Step 1: Wait for the iframe to load
-//     console.log("Waiting for the ad iframe...");
-//     await page.waitForSelector('iframe#aswift_1', { timeout: 20000 }); // Wait for the iframe
-//     console.log("Ad iframe detected.");
-
-//     // Step 2: Access the iframe
-//     const adIframe = await page.$('iframe#aswift_1'); // Select the iframe
-//     const frame = await adIframe.contentFrame(); // Access the iframe's content frame
-//     if (!frame) throw new Error("Unable to access iframe content.");
-
-//     // Step 3: Wait for the close button inside the iframe
-//     console.log("Waiting for the close button inside the iframe...");
-//     await frame.waitForSelector('div#dismiss-button', { timeout: 30000 }); // Wait for the close button inside iframe
-//     console.log("Close button detected inside the iframe. Clicking...");
-
-//     // Step 4: Click the close button
-//     await frame.evaluate(() => {
-//         const closeButton = document.querySelector('div#dismiss-button');
-//         if (closeButton) closeButton.click();
-//     });
-//     await new Promise(resolve => setTimeout(resolve, 3000));// Wait for ad to fully close
-//     console.log("Ad closed successfully.");
-// } catch (error) {
-//     console.log("Error while handling ad iframe or close button:", error.message);
-// }
    
 //   // Step 1: Click 'Click here to continue'
 
@@ -231,7 +202,7 @@ async function handleNavigationSteps(page) {
     await page.evaluate(() => window.scrollBy(0, 200));
 
     // Wait for timer
-    await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
+    await new Promise(resolve => setTimeout(resolve, 6000)); // Wait for 10 seconds
 
     // Ensure button is visible
     await page.evaluate(() => {
@@ -291,7 +262,7 @@ await page.waitForNavigation({ waitUntil: 'networkidle2' });
     await page.evaluate(() => window.scrollBy(0, 200));
 
     // Wait for timer
-    await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
+    await new Promise(resolve => setTimeout(resolve, 6000)); // Wait for 10 seconds
 
     // Ensure button is visible
     await page.evaluate(() => {

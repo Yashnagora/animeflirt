@@ -6,32 +6,15 @@ import React, { useState } from "react";
 
 const Trending = (TrandingAnimeData) => {
   // const animeData = TrandingAnimeData;
+
   // const sortedAnimeData = animeData.TrandingAnimeData.sort((a, b) => b.averageScore - a.averageScore);
-  // const [hoveredAnimeId, setHoveredAnimeId] = useState(null);
-  // const [display, setdisplay] = useState("none");
   
-
-  // const handleMouseEnter = (id) => {
-  //   setHoveredAnimeId(id);
-  //   setdisplay("block")
-  // };
-
-  // const handleMouseLeave = (id) => {
-  //   // Delay added to allow smooth transition between card and details box
-  //   setTimeout(() => {
-  //     if (hoveredAnimeId === id) {
-  //       setHoveredAnimeId(null);
-  //       setdisplay("none")
-  //     }
-  //   }, 200);
-  // };
-
   return (
     <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Trandingpage</h1></div>
     // <div className="trending second">
     //   <div className="latest">
     //     <div className="box" style={{ justifyContent: "normal" }}>
-    //       {animeData.TrandingAnimeData.map((anime) => {
+    //       {sortedAnimeData.map((anime) => {
     //         return (
     //           <div key={anime.id} className="main-box">
     //             <Head>
@@ -56,16 +39,17 @@ const Trending = (TrandingAnimeData) => {
     //                   min-width: 50px;
     //                   direction: ltr;
     //                   padding: 0;
+    //                   transition: 0.2s all linear
     //               }
     //               .trending .latest .box .main-box:hover .anime-details-${anime.id}{
-    //                   display: block;
-    //                   transition: 0.2s all linear
+    //                 display: block;
+    //                 transition: 0.2s all linear
     //               }
 
     //     `}</style>
     //             </Head>
     //             <div className={`card card-${anime.id}`}>
-    //               <Link href={`/Detail?id=${anime.id}`} className="anime-box">
+    //               <Link href={`/${anime.title.english.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}-${anime.id}`} className="anime-box">
     //                 <div>
     //                   <div className="tic">
     //                     <div className="tic-item tic-sub">
@@ -85,7 +69,7 @@ const Trending = (TrandingAnimeData) => {
     //             </div>
     //             <div className="video-details">
     //               <h3 className="video-title">
-    //                 <Link href={`/Detail?id=${anime.id}`}>
+    //                 <Link href={`/${anime.title.english.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}-${anime.id}`}>
     //                   {anime.title.english}
     //                 </Link>
     //               </h3>
@@ -161,7 +145,7 @@ const Trending = (TrandingAnimeData) => {
     //                     </div>
     //                     <div className="popup-button">
     //                       <Link
-    //                         href={`/Detail?id=${anime.id}`}
+    //                         href={`/${anime.title.english.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}-${anime.id}`}
     //                         className="btn-play"
     //                       >
     //                         <i className="fa fa-play mr-2"></i>

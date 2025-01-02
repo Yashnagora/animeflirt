@@ -9,7 +9,10 @@ const Watch = ({ anime, animeD, AllAnimeData}) => {
   // console.log(anime);
   // const MyAnimeData = anime;
 
-  // const [currentEpisode, setCurrentEpisode] = useState(MyAnimeData.episodes[0]);
+  // const [currentServer, setCurrentServer] = useState(Object.keys(MyAnimeData.episodes)[0]); // Default to the first server
+  // const [currentEpisode, setCurrentEpisode] = useState(
+  //   MyAnimeData.episodes[currentServer][0]
+  // );
   // const [hydrated, setHydrated] = useState(false);
 
   // useEffect(() => {
@@ -20,12 +23,21 @@ const Watch = ({ anime, animeD, AllAnimeData}) => {
   //   return null;
   // }
 
-  // const handleEpisodeClick = (episode) => {
-  //   setCurrentEpisode(episode); // Set the clicked episode as the current episode
+  // // Handle Server Change
+  // const handleServerChange = (serverType) => {
+  //   setCurrentServer(serverType);
+  //   setCurrentEpisode(MyAnimeData.episodes[serverType][0]); // Reset to first episode of the new server
   // };
 
+  // // Handle Episode Change
+  // const handleEpisodeClick = (episode) => {
+  //   setCurrentEpisode(episode);
+  // };
+  
+
   return (
-    <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Trandingpage</h1></div>
+
+    <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Home</h1></div>
 //     <>
 //       <Head>
 //         <title>Watch {MyAnimeData.title}</title>
@@ -56,18 +68,23 @@ const Watch = ({ anime, animeD, AllAnimeData}) => {
 //           <div className="main-contant">
 //             <div className="episode-video">
 //               <div className="video-player" style={{ position: "static" }}>
-//                 <iframe
-//                   src={currentEpisode.iframeSrc}
-//                   autoPlay="1"
-//                   id="video-player"
-//                   className="video-player"
-//                   allowFullScreen="allowFullScreen"
-//                   allow="accelerometer;autoplay;encripted-media;gyroscope;picture-in-picture"
-//                   webkitallowfullscreen="true"
-//                   mozallowfullscreen="true"
-//                   frameBorder="0"
-//                   scrolling="no"
-//                 ></iframe>
+//                 {/* Video Player */}
+//                 {currentEpisode && (
+//                   <iframe
+//                     src={currentEpisode.iframeSrc}
+//                     // src="https://z.awstream.net/video/81c650caac28cdefce4de5ddc18befa0"
+//                     // src="/api/proxy?url=https://swift.multiquality.click/embed/tcaQXfTBmAEA3Gi"
+//                     autoPlay="1"
+//                     id="video-player"
+//                     className="video-player"
+//                     allowFullScreen
+//                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+//                     webkitallowfullscreen="true"
+//                     mozallowfullscreen="true"
+//                     frameBorder="0"
+//                     scrolling="no"
+//                   ></iframe>
+//                 )}
 //               </div>
 //               <div className="episode-detail">
 //                 <div className="video-dow" style={{ justifyContent: "end" }}>
@@ -120,9 +137,20 @@ const Watch = ({ anime, animeD, AllAnimeData}) => {
 //                         </div>
 //                         <div className="selact-servers">
 //                           <div className="servers-div">
-//                             <div className="server-btn">
-//                               <span>{currentEpisode.serverType}</span>
-//                             </div>
+                            
+//                               {/* <span>{currentEpisode.serverType}</span> */}
+//                               {Object.keys(MyAnimeData.episodes).map((serverType) => (
+//                     <span
+//                       key={serverType}
+//                       className={`server-btn ${
+//                         currentServer === serverType ? "active-server" : ""
+//                       }`}
+//                       onClick={() => handleServerChange(serverType)}
+//                     >
+//                       {serverType}
+//                     </span>
+//                   ))}
+                            
 //                           </div>
 //                         </div>
 //                       </div>
@@ -164,44 +192,45 @@ const Watch = ({ anime, animeD, AllAnimeData}) => {
 //                       gridGap: "0 0",
 //                     }}
 //                   >
-//                     {MyAnimeData.episodes.map((episode, index) => {
-//                       const isEven = index % 2 === 0;
-//                       return (
-//                         <div
-//                           className={`episode-short`}
-//                           key={index}
-//                           onClick={() => handleEpisodeClick(episode)} // Handle episode click
-//                         >
-//                           <div className="short-anime-ep">
-//                             {/* Switch classes based on index (odd/even) */}
-//                             <div
-//                               className={`episode-num ${isEven
-//                                   ? "episode-alternate-1"
-//                                   : "episode-alternate-2"
-//                                 } ${currentEpisode.episodeNumber ===
-//                                   episode.episodeNumber
-//                                   ? "active-episode"
-//                                   : ""
-//                                 }`}
-//                             >
-//                               {episode.episodeNumber}
-//                             </div>
-//                             <div
+                    
+//                     {MyAnimeData.episodes[currentServer]?.map((episode, index) => {
+                      
+//                     const isEven = index % 2 === 0;
+                    
+//                     return (
+                      
+//                       <div
+//                         className="episode-short"
+//                         key={index}
+//                         onClick={() => handleEpisodeClick(episode)}
+//                       >
+//                         <div className="short-anime-ep">
+//                           <div
+//                             className={`episode-num ${isEven
+//                               ? "episode-alternate-1"
+//                               : "episode-alternate-2"
+//                             } ${
+//                               currentEpisode.episodeNumber === episode.episodeNumber
+//                                 ? "active-episode"
+//                                 : ""
+//                             }`}
+//                           >
+//                             {episode.episodeNumber}
+//                           </div>
+//                           <div
 //                               className={`episode-name ${isEven
 //                                   ? "episode-alternate-2"
 //                                   : "episode-alternate-1"
-//                                 } ${currentEpisode.episodeNumber ===
-//                                   episode.episodeNumber
+//                                 } ${currentEpisode.episodeNumber === episode.episodeNumber
 //                                   ? "active-episode-2"
 //                                   : ""
 //                                 }`}
 //                             >
-//                               <span>{episode.title}</span>
-//                             </div>
+//                             <span>{episode.EpisodeTitle}</span>
 //                           </div>
 //                         </div>
-//                       );
-//                     })}
+//                       </div>
+//                     )})}
 //                   </div>
 //                 </div>
 //               </div>
@@ -285,7 +314,6 @@ export default Watch;
 //     await mongoose.connect(process.env.MONGO_URI);
 //   }
 
-//   const ids = [113415, 136430, 166240, 153288, 151807, 1535, 131573, 110277];
 //   let MyAnime = await Anime.find({});
 
 //   let anime = await Anime.findOne({ slug: context.query.slug });

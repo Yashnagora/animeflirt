@@ -50,7 +50,8 @@ const Navbar = () => {
           <li><Link  href="/" className={router.pathname === "/" ? 'home-active' : ''}>Home</Link></li>
           <li><Link className={router.pathname === "/Trending" ? 'home-active' : ''} href="/Trending">Trending</Link></li>
           <li><Link className={router.pathname === "/test" ? 'home-active' : ''} href="/test">ScrapeAnime</Link></li>
-          <li><Link href="/coming">Coming</Link></li>
+          <li><Link className={router.pathname === "/admin" ? 'home-active' : ''} href="/admin">Admin</Link></li>
+          {/* <li><Link href="/coming">Coming</Link></li> */}
           {/* <li><Link href="/newsletter">Newsletter</Link></li> */}
         </ul>
         <a href="#" className="btn">Sign In</a>
