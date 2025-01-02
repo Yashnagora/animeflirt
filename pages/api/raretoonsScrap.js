@@ -1,4 +1,9 @@
-import puppeteer from 'puppeteer';
+// import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
+
+chromium.setHeadlessMode = true;
+chromium.setGraphicsMode = false;
 
 export default async function handler(req, res) {
   const { url } = req.body;
@@ -7,12 +12,29 @@ export default async function handler(req, res) {
   }
 
   try {
+    // const browser = await puppeteer.launch({
+    //   headless: false,
+    //   args: [
+    //     '--no-sandbox',
+    //     '--disable-setuid-sandbox',
+    //   ],
+    // });
+
+    const isLocal = !!process.env.CHROME_EXECUTABLE_PATH;
+
     const browser = await puppeteer.launch({
-      headless: false,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-      ],
+      // headless: chromium.headless,
+      headless: true,
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-zygote',
+    '--single-process',
+    '--disable-gpu',
+  ],
+      executablePath: process.env.CHROME_EXECUTABLE_PATH || await chromium.executablePath(),
     });
 
     const page = await browser.newPage();
