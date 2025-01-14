@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
-// import Link from 'next/link';
-// import Head from 'next/head';
+import Link from 'next/link';
+import Head from 'next/head';
 
 const Recommended = (AllAnimeData) => {
-    // console.log({AllAnimeData})
-    // const animeData = AllAnimeData;
-    // const sortedAnimeData = animeData.AllAnimeData.sort((a, b) => b.averageScore - a.averageScore);
+    console.log({AllAnimeData})
+    const animeData = AllAnimeData;
+    const sortedAnimeData = animeData.AllAnimeData.sort((a, b) => b.averageScore - a.averageScore);
     
   
     return (
         <>      
-        <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Trandingpage</h1></div>
-        {/* <div className="recommended">
+        {/* <div><h1 style={{textAlign : 'center', margin: '100px 0px'}}>Anime Trandingpage</h1></div> */}
+        <div className="recommended">
       <div className="trending second">
         <span className="reco-span">
             <b>Recommended Animes</b>
@@ -168,7 +168,7 @@ const Recommended = (AllAnimeData) => {
           </div>
         </div>
       </div>
-      </div> */}
+      </div>
       </>
   )
 }

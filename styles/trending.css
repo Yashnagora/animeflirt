@@ -1,5 +1,6 @@
 .trending{
     margin-top: 100px;
+    display: flow-root;
   }
 
   .trending .latest{

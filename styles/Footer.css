@@ -1,0 +1,274 @@
+.main-footer {
+  padding: 0;
+  position: relative;
+}
+
+.main-footer-about {
+  padding: 2rem 0px;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1800px;
+  width: 100%;
+}
+
+.main-footer-top {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.main-footer-logo {
+  display: block;
+  float: left;
+  margin: 0 2rem 0 0;
+}
+
+.main-footer-joingroup {
+  display: flex;
+  align-items: center;
+}
+
+.anw-group {
+  display: inline-block;
+  padding: 0 0 0 30px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.9em;
+  position: relative;
+}
+
+.anw-group .zrg-list {
+  float: left;
+  height: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.anw-group .zrg-list .joingroup-item {
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.zr-soicial-button {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+}
+
+.anw-group .zrg-list .joingroup-item i {
+  font-size: 16px;
+  line-height: 32px;
+  vertical-align: text-bottom;
+}
+
+.zr-soicial-button.dc {
+  background: #6f85d5;
+  color: #fff;
+}
+
+.zr-soicial-button.tl-btn {
+  background: #08c;
+  color: #fff;
+}
+
+.zr-soicial-button.ig-btn {
+  background: #ff3c1f;
+  color: #fff;
+}
+
+.zr-soicial-button.tw-btn {
+  background: #1d9bf0;
+  color: #fff;
+}
+
+.footer-atoz {
+  margin: 0px 0px 1rem;
+}
+
+.footer-block {
+  margin-bottom: 1rem !important;
+}
+
+.ftaz {
+  display: inline-block;
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  line-height: 1em;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.atoz-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.atoz-list li {
+  margin: 0.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+ul.atoz-list li a {
+  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.4rem 0.6rem;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.4rem;
+  color: #fff;
+  text-decoration: none !important;
+  outline: 0;
+}
+
+.main-footer-links {
+  margin-bottom: 10px;
+}
+
+.main-footer-links ul{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.main-footer-links ul li {
+    float: left;
+    margin-right: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.main-footer-links ul li a {
+    line-height: 30px;
+    font-size: .9em;
+    color: #fff;
+    text-decoration: none !important;
+    outline: 0;
+}
+
+.main-footer-text {
+    padding-left: 15px;
+    margin: 0 auto 5px;
+    line-height: 1.4em;
+    opacity: .5;
+    font-size: .9em;
+}
+
+.footer-copyright {
+    padding-left: 15px;
+    padding-bottom: 2rem;
+    margin-bottom: 0 !important;
+    opacity: .5;
+}
+
+
+/* responsive  */
+
+@media screen and (max-width: 1599px) {
+  .footer-container {
+    max-width: 100%;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .main-footer {
+    padding: 0 0 20px;
+  }
+
+  .main-footer-about {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .main-footer {
+    font-size: 13px;
+    padding: 0;
+  }
+
+  .main-footer-about {
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .anw-group {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  ul.atoz-list li {
+    margin: 5px;
+  }
+
+  .main-footer-links {
+    text-align: center;
+    float: none !important;
+    display: block !important;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .main-footer-links ul {
+    text-align: center;
+    float: none !important;
+    display: block !important;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .main-footer-links ul li {
+    display: inline-block;
+    margin: 0 12px;
+    float: none !important;
+}
+
+
+}
+
+@media screen and (max-width: 479px) {
+  .main-footer {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .main-footer-top {
+    padding-bottom: 0;
+    border: none;
+  }
+
+  .main-footer-logo {
+    display: none;
+  }
+
+  .main-footer-joingroup {
+    float: none;
+    margin: 0 auto;
+  }
+
+  .anw-group {
+    padding: 15px;
+    border: none;
+    font-weight: 500;
+    background: #fff;
+    color: #111;
+    border-radius: 10px;
+  }
+
+  .footer-atoz {
+    display: none;
+  }
+}

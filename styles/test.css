@@ -298,3 +298,7 @@ input, select, textarea {
     font-size: 16px;
     color: #333;
 }
+
+.raretoons label{
+    color: black
+}
